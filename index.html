@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trades AI - Institutional Analysis Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --emerald-glow: rgba(16, 185, 129, 0.15);
+            --bg-deep: #030712;
+            --card-glass: rgba(17, 24, 39, 0.6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: #f9fafb;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains+Mono', monospace;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 10px;
+        }
+
+        /* Premium Glassmorphism */
+        .glass {
+            background: var(--card-glass);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(1000%); opacity: 0; }
+        }
+        .scanline {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(to right, transparent, #10b981, transparent);
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        /* Transitions */
+        .page-transition-enter { opacity: 0; transform: translateY(10px); }
+        .page-transition-enter-active { opacity: 1; transform: translateY(0); transition: all 400ms ease-out; }
+
+        .path-animate {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: dash 8s linear infinite;
+        }
+        @keyframes dash { to { stroke-dashoffset: 0; } }
+        
+        .shadow-3xl {
+            shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

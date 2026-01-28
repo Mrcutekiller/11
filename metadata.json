@@ -1,0 +1,7 @@
+{
+  "name": "TradeVision AI",
+  "description": "Premium AI-powered trading companion providing real-time market analysis and high-precision signals with multiple target levels.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
